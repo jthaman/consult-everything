@@ -1,6 +1,6 @@
 # `consult-everything`
 
-Use Consult to read results from Everything.
+Use [Consult](https://github.com/minad/consult) to read results from [Everything](https://www.voidtools.com/support/everything/command_line_interface/).
 
 ## Requirements
 
@@ -9,7 +9,7 @@ Use Consult to read results from Everything.
 
 ## Installation
 
-Install from Github via straight.el until the software is available on MELPA or ELPA.
+Install from Github via [straight.el](https://github.com/radian-software/straight.el) until the software is available on MELPA or ELPA.
 
 ```
 (use-package consult-everything
