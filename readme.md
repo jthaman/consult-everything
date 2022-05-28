@@ -13,8 +13,7 @@ Install from Github via straight.el until the software is available on MELPA or 
 
 ```
 (use-package consult-everything
-  :straight (consult-everything :host github :repo "jthaman/consult-everything")
-)
+  :straight (consult-everything :host github :repo "jthaman/consult-everything"))
 ```
 
 ![](pic.png)
