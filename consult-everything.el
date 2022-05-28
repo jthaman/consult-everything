@@ -19,7 +19,7 @@
 (require 'consult)
 
 (defcustom consult-everything-args
-  "es -r"
+  "es -p -r"
   "Command line arguments for everything, see `consult-everything'.
 The dynamically computed arguments are appended."
   :type 'string)
