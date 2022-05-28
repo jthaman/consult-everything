@@ -20,7 +20,7 @@
 
 (defcustom consult-everything-args
   "es -r"
-  "Command line arguments for find, see `consult-find'.
+  "Command line arguments for everything, see `consult-everything'.
 The dynamically computed arguments are appended."
   :type 'string)
 
@@ -35,7 +35,7 @@ INITIAL is initial input."
    (consult--async-command builder
      (consult--async-map (lambda (x) (string-remove-prefix "./" x)))
      (consult--async-highlight builder)
-     :file-handler nil) ;; allow tramp
+     :file-handler nil) ;; do not allow tramp
    :prompt prompt
    :sort nil
    :require-match t
@@ -59,7 +59,6 @@ INITIAL is initial input."
   (pcase-let* ((cmd (split-string-and-unquote consult-everything-args))
                (type (consult--everything-regexp-type (car cmd)))
                (`(,arg . ,opts) (consult--command-split input))
-               ;; ignore-case=t since -iregex is used below
                (`(,re . ,hl) (funcall consult--regexp-compiler arg type t)))
     (when re
       (list :command
@@ -77,10 +76,8 @@ INITIAL is initial input."
             :highlight hl))))
 
 ;;;###autoload
-(defun consult-everything (&optional dir initial)
-  "Search for files in DIR matching input regexp given INITIAL input.
-The find process is started asynchronously, similar to `consult-grep'.
-See `consult-grep' for more details regarding the asynchronous search."
+(defun consult-everything (&optional initial)
+  "Search for files matching input regexp given INITIAL input."
   (interactive "P")
   (let* ((prompt-dir (consult--directory-prompt "Everything" dir))
          (default-directory (cdr prompt-dir)))
