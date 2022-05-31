@@ -19,7 +19,7 @@
 (require 'consult)
 
 (defcustom consult-everything-args
-  "es -p -r"
+  "es -r"
   "Command line arguments for everything, see `consult-everything'.
 The dynamically computed arguments are appended."
   :type 'string)
@@ -76,7 +76,7 @@ INITIAL is initial input."
             :highlight hl))))
 
 ;;;###autoload
-(defun consult-everything (&optional initial)
+(defun consult-everything (&optional initial dir)
   "Search for files matching input regexp given INITIAL input."
   (interactive "P")
   (let* ((prompt-dir (consult--directory-prompt "Everything" dir))
