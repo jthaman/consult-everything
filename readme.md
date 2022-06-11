@@ -14,14 +14,14 @@ Install from Github via [straight.el](https://github.com/radian-software/straigh
 
 A simple package installation recipe is
 
-```lisp
+```emacs-lisp
 (use-package consult-everything
   :straight (consult-everything :host github :repo "jthaman/consult-everything"))
 ```
 
 I use this use-package incantation:
 
-```lisp
+```emacs-lisp
 (use-package consult-everything
   :if (eq system-type 'windows-nt)
   :defer t
