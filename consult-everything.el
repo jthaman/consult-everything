@@ -55,26 +55,7 @@ INITIAL is initial input."
                        (concat cmd " -regextype emacs -version")))
                 'emacs 'basic))))
 
-;; (defun consult--everything-builder (input)
-;;   "Build command line given INPUT."
-;;   (pcase-let* ((cmd (split-string-and-unquote consult-everything-args))
-;;                (type (consult--everything-regexp-type (car cmd)))
-;;                (`(,arg . ,opts) (consult--command-split input))
-;;                (`(,re . ,hl) (funcall consult--regexp-compiler arg type t)))
-;;     (when re
-;;       (list :command
-;;             (append cmd
-;;                     (cdr (mapcan
-;;                           (lambda (x)
-;;                             `(""
-;;                               ,(format ".*%s.*"
-;;                                        ;; HACK Replace non-capturing groups with capturing groups.
-;;                                        ;; GNU find does not support non-capturing groups.
-;;                                        (replace-regexp-in-string
-;;                                         "\\\\(\\?:" "\\(" x 'fixedcase 'literal))))
-;;                           re))
-;;                     opts)
-;;             :highlight hl))))
+;; based on `consult--locate-builder'.
 
 (defun consult--everything-builder (input)
   "Build command line given INPUT."
