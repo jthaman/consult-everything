@@ -3,7 +3,7 @@
 ;; Copyright (C) John Haman 2022
 ;; Author: John Haman <mail@johnhaman.org>
 ;; Homepage: https://github.com/jthaman/consult-everything
-;; Package-Requires: ((emacs "25.1") (consult "0.15"))
+;; Package-Requires: ((emacs "25.1") (consult "0.15") (orderless "0.6"))
 ;; Version: 0.1
 
 ;; This file is not part of GNU Emacs.
@@ -21,8 +21,7 @@
 
 (defcustom consult-everything-args
   "es -r"
-  "Command line arguments for everything, see `consult-everything'.
-The dynamically computed arguments are appended."
+  "Command line arguments for everything, see `consult-everything'."
   :type 'string)
 
 (defun consult--everything (prompt builder initial)
@@ -65,7 +64,7 @@ INITIAL is initial input."
                                       (member "--ignore-case" cmd))))
     (when re
       (list :command
-            (append cmd (list (consult--join-regexps re 'basic)) opts)
+            (append cmd (list (consult--join-regexps re 'orderless)) opts)
             :highlight hl))))
 
 ;;;###autoload
