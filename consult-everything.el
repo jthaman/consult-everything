@@ -20,6 +20,7 @@
 ;;; Code:
 
 (require 'consult)
+(require 'orderless)
 
 (defcustom consult-everything-args
   "es -r"
