@@ -15,6 +15,8 @@
 ;; https://www.voidtools.com/downloads/#cli and place the binary in your Path.
 ;; Everything is a useful `locate' alternative on Windows machines.
 
+;;; TODO: do not depend on the orderless package.
+
 ;;; Code:
 
 (require 'consult)
