@@ -3,6 +3,7 @@
 ;; Copyright (C) John Haman 2022
 ;; Author: John Haman <mail@johnhaman.org>
 ;; Homepage: https://github.com/jthaman/consult-everything
+;; Package-Requires: ((emacs "25.1") (consult "0.15"))
 ;; Version: 0.1
 
 ;; This file is not part of GNU Emacs.
@@ -42,7 +43,7 @@ INITIAL is initial input."
    :initial (consult--async-split-initial initial)
    :add-history (consult--async-split-thingatpt 'filename)
    :category 'file
-   :history '(:input consult--find-history)))
+   :history '(:input consult--everything-history)))
 
 (defvar consult--everything-regexp-type nil)
 
@@ -85,8 +86,6 @@ INITIAL is initial input."
       (list :command
             (append cmd (list (consult--join-regexps re 'basic)) opts)
             :highlight hl))))
-
-(consult--everything-builder "init el")
 
 ;;;###autoload
 (defun consult-everything (&optional initial dir)
