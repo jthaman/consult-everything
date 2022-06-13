@@ -4,7 +4,7 @@ Use [Consult](https://github.com/minad/consult) to read results from [Everything
 
 ## Requirements
 
-- Windows 10
+- Windows OS 
 - [Everything command line interface](https://www.voidtools.com/support/everything/command_line_interface/)
 - A recent version of Emacs for Windows.
 
