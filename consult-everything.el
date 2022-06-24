@@ -64,7 +64,7 @@ INITIAL is initial input."
   (pcase-let* ((cmd (split-string-and-unquote consult-everything-args))
                (`(,arg . ,opts) (consult--command-split input))
                (`(,re . ,hl) (funcall consult--regexp-compiler arg 'basic
-                                      (member "--ignore-case" cmd))))
+                                      (not (member "-i" cmd)))))
     (when re
       (list :command
             (append cmd (list (consult--join-regexps re 'orderless)) opts)
