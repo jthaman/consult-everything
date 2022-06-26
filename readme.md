@@ -1,10 +1,10 @@
 # `consult-everything`
 
-Use [Consult](https://github.com/minad/consult) to read results from [Everything](https://www.voidtools.com/support/everything/command_line_interface/).
+Use [Consult](https://github.com/minad/consult) to read results from [Everything](https://www.voidtools.com).
 
 ## Requirements
 
-- Windows OS 
+- Windows OS
 - [Everything command line interface](https://www.voidtools.com/support/everything/command_line_interface/)
 - A recent version of Emacs for Windows.
 
