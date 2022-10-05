@@ -1,6 +1,6 @@
 # `consult-everything`
 
-Use [Consult](https://github.com/minad/consult) to read results from [Everything](https://www.voidtools.com/support/everything/command_line_interface/).
+Use [Consult](https://github.com/minad/consult) to read results from [Everything](https://www.voidtools.com).
 
 ## Requirements
 

@@ -15,6 +15,20 @@
 ;; https://www.voidtools.com/downloads/#cli and place the binary in your Path.
 ;; Everything is a useful `locate' alternative on Windows machines.
 
+;;; License:
+
+;; This program is free software: you can redistribute it and/or modify it under
+;; the terms of the GNU General Public License as published by the Free Software
+;; Foundation, either version 3 of the License, or (at your option) any later
+;; version.
+
+;; This program is distributed in the hope that it will be useful, but WITHOUT ANY
+;; WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+;; PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License along with
+;; this program. If not, see <https://www.gnu.org/licenses/>.
+
 ;;; TODO: do not depend on the orderless package.
 ;;; TODO: Fix the highlighting
 
@@ -65,7 +79,8 @@ INITIAL is initial input."
   (pcase-let* ((cmd (split-string-and-unquote consult-everything-args))
                (`(,arg . ,opts) (consult--command-split input))
                (`(,re . ,hl) (funcall consult--regexp-compiler arg 'basic
-                                      (member "--ignore-case" cmd))))
+                                      (and (not (member "-i" cmd))
+                                           (not (member "-case" cmd))))))
     (when re
       (list :command
             (append cmd (list (consult--join-regexps re 'orderless)) opts)
