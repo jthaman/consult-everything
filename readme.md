@@ -4,7 +4,7 @@ Use [Consult](https://github.com/minad/consult) to read results from [Everything
 
 ## Requirements
 
-- Windows OS 
+- Windows OS
 - [Everything command line interface](https://www.voidtools.com/support/everything/command_line_interface/)
 - A recent version of Emacs for Windows.
 
@@ -24,7 +24,7 @@ I use this use-package incantation:
 ```emacs-lisp
 (use-package consult-everything
   :if (eq system-type 'windows-nt)
-  :defer t
+  :after consult
   :load-path "~/lisp/consult-everything/"
   :config
   (general-define-key ; set key in Normal state for Evil users.
