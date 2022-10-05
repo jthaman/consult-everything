@@ -31,6 +31,7 @@ I use this use-package incantation:
    :states 'normal
    "SPC L" 'consult-everything))
 ```
+
 ## Recommendation
 
 Install the [embark](https://github.com/oantolin/embark) package to open files externally from the minibuffer, rather than in Emacs.

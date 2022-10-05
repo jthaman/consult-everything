@@ -16,6 +16,7 @@
 ;; Everything is a useful `locate' alternative on Windows machines.
 
 ;;; TODO: do not depend on the orderless package.
+;;; TODO: Fix the highlighting
 
 ;;; Code:
 
