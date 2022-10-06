@@ -90,9 +90,7 @@ INITIAL is initial input."
 (defun consult-everything (&optional initial dir)
   "Search for files matching input regexp given INITIAL input."
   (interactive "P")
-  (let* ((prompt-dir (consult--directory-prompt "Everything" dir))
-         (default-directory (cdr prompt-dir)))
-    (find-file (consult--everything (car prompt-dir) #'consult--everything-builder initial))))
+  (find-file (consult--everything "Everything: " #'consult--everything-builder initial)))
 
 (provide 'consult-everything)
 
