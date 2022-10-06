@@ -87,7 +87,7 @@ INITIAL is initial input."
             :highlight hl))))
 
 ;;;###autoload
-(defun consult-everything (&optional initial dir)
+(defun consult-everything (&optional initial)
   "Search for files matching input regexp given INITIAL input."
   (interactive "P")
   (find-file (consult--everything "Everything: " #'consult--everything-builder initial)))
