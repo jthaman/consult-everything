@@ -37,6 +37,8 @@
 (require 'consult)
 (require 'orderless)
 
+(defvar consult--everything-regexp-type nil)
+
 (defcustom consult-everything-args
   "es -r"
   "Command line arguments for everything, see `consult-everything'."
@@ -62,7 +64,6 @@ INITIAL is initial input."
    :category 'file
    :history '(:input consult--everything-history)))
 
-(defvar consult--everything-regexp-type nil)
 
 (defun consult--everything-regexp-type (cmd)
   "Return regexp type supported by es CMD."
